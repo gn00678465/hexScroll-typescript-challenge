@@ -25,7 +25,7 @@ export enum BookCategory {
 
 export function getBookCategory(category: BookCategory) {
   // 在此實現函式
-   switch(category) {
+  switch(category) {
     case 'Novel':
       return 'Book category: Novel';
     case 'Science':
