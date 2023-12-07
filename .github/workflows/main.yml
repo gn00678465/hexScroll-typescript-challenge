@@ -14,10 +14,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18.16.0"
-      - name: NPM ci and cacheing
-        uses: bahmutov/npm-install@v1
+      - name: Pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
         with:
-          useRollingCache: true
+            version: 8
+            run_install: true
+            auto-install-peers: false
   unittest:
     name: Run UnitTest
     needs: [build]
@@ -29,12 +32,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18.16.0"
-      - name: Get Cache Node Module
-        uses: bahmutov/npm-install@v1
+      - name: Pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
         with:
-          useRollingCache: true
+            version: 8
+            run_install: true
+            auto-install-peers: false
       - name: run unit test
-        run: npm run test:coverage
+        run: pnpm run test:coverage
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
