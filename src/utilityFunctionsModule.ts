@@ -8,7 +8,10 @@
  * @returns - 回傳一個字串，表示格式化後的日期
  */
 export function formatDate(date: Date): string {
-    // 請在此處寫下你的程式碼
+    const yyyy = date.getFullYear();
+    const mm = date.getMonth();
+    const dd = date.getDate();
+    return `${yyyy}-${addZero(mm+1)}-${addZero(dd)}`
 }
 
 /**
@@ -21,5 +24,10 @@ export function formatDate(date: Date): string {
  * @returns - 回傳一個數字，表示四捨五入後的結果
  */
 export function roundNumber(num: number): number {
-    // 請在此處寫下你的程式碼
+    return Math.round(num);
+}
+
+
+function addZero(n: number): string {
+    return (n).toString().padStart(2, '0')
 }

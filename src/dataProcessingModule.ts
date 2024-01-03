@@ -8,7 +8,11 @@
  * @returns - 回傳一個數字陣列，表示排序後的結果
  */
 export function sortArray(numbers: number[]): number[] {
-    // 請在此處寫下你的程式碼
+    return numbers.sort((a, b) => {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+    })
 }
 
 /**
@@ -22,7 +26,7 @@ export function sortArray(numbers: number[]): number[] {
  * @returns - 回傳一個數字陣列，表示過濾後的結果
  */
 export function filterArray(numbers: number[], predicate: (num: number) => boolean): number[] {
-    // 請在此處寫下你的程式碼
+    return numbers.filter(predicate);
 }
 
 /**
@@ -36,5 +40,5 @@ export function filterArray(numbers: number[], predicate: (num: number) => boole
  * @returns - 回傳一個數字陣列，表示轉換後的結果
  */
 export function transformArray(numbers: number[], transform: (num: number) => number): number[] {
-    // 請在此處寫下你的程式碼
+    return numbers.map(transform);
 }
