@@ -11,6 +11,15 @@
  * 輸入: { brand: 'Toyota', model: 'Corolla', year: 2020 }
  * 輸出: 'Toyota Corolla (2020)'
  */
-export function vehicleInfo(vehicle: /* 你的車輛介面 */): string {
+
+interface Vehicle {
+    brand: string;
+    model: string;
+    year: number;
+}
+
+export function vehicleInfo(vehicle: Vehicle): string {
     // 在此實現函式
+    const { brand, model, year } = vehicle;
+    return `${brand} ${model} (${year})`;
 }

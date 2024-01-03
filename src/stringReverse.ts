@@ -7,4 +7,6 @@
  */
 export function reverseString(str: string): string {
     // 在此實現函式
+    if (str.length <= 1) return str;
+    return str.split('').reverse().join('');
 }
